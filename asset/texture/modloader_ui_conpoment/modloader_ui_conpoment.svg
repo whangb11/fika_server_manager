@@ -1,0 +1,77 @@
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg">
+    <!-- + -->
+    <rect x="28" y="8" width="8" height="48" fill="white"/>
+    <rect x="8" y="28" width="48" height="8" fill="white"/>
+    
+    <!-- +.pressed -->
+    <rect x="92" y="8" width="8" height="48" fill="#CCCCCC"/>
+    <rect x="72" y="28" width="48" height="8" fill="#CCCCCC"/>
+
+    <!--  trashbin  -->
+    <rect x="140" y="16" width="40" height="44" fill="#00000000" stroke="white" stroke-width="4"/>
+    <rect x="134" y="14" width="52" height="4" fill="white"/>
+    <rect x="160" y="4" width="4" height="8" fill="white"/>
+    <rect x="148" y="16" width="4" height="44" fill="white"/>
+    <rect x="158" y="16" width="4" height="44" fill="white"/>
+    <rect x="168" y="16" width="4" height="44" fill="white"/>
+    
+    <!--  trashbin.pressed  -->
+    <rect x="204" y="16" width="40" height="44" fill="#00000000" stroke="#CCCCCC" stroke-width="4"/>
+    <rect x="198" y="14" width="52" height="4" fill="#CCCCCC"/>
+    <rect x="224" y="4" width="4" height="8" fill="#CCCCCC"/>
+    <rect x="212" y="16" width="4" height="44" fill="#CCCCCC"/>
+    <rect x="222" y="16" width="4" height="44" fill="#CCCCCC"/>
+    <rect x="232" y="16" width="4" height="44" fill="#CCCCCC"/>
+
+    <!--  delete  -->
+    <rect transform="rotate(-45 32 96)" stroke="#ffffff" stroke-width="0" id="svg_10" height="8" width="72" y="92" x="-4" fill="#ffffff"/>
+    <rect transform="rotate(45 32 96)" stroke="#ffffff" stroke-width="0" id="svg_11" height="8" width="72" y="92" x="-4" fill="#ffffff"/>
+ 
+    <!--  delete.pressed  -->
+    <rect transform="rotate(-45 96 96)" stroke="#CCCCCC" stroke-width="0" id="svg_10" height="8" width="72" y="92" x="60" fill="#CCCCCC"/>
+    <rect transform="rotate(45 96 96)" stroke="#CCCCCC" stroke-width="0" id="svg_11" height="8" width="72" y="92" x="60" fill="#CCCCCC"/>
+
+    <!--  expand&collapse  -->
+    <polygon points="132,98 160,82 188,98 188,110 160,94 132,110 " fill="white"/>
+
+    <!--  expand&collapse.pressed  -->
+    <polygon points="196,98 224,82 252,98 252,110 224,94 196,110 " fill="#CCCCCC"/>
+
+    <!--  draggy_hand  -->
+    <rect x="4" y="141" width="56" height="8" fill="white"/>
+    <rect x="4" y="156" width="56" height="8" fill="white"/>
+    <rect x="4" y="171" width="56" height="8" fill="white"/>
+    <!--  draggy_hand.pressed  -->
+    <rect x="68" y="141" width="56" height="8" fill="#CCCCCC"/>
+    <rect x="68" y="156" width="56" height="8" fill="#CCCCCC"/>
+    <rect x="68" y="171" width="56" height="8" fill="#CCCCCC"/>
+
+    <!--  refresh  -->
+    <circle id="renc" cx="160" cy="160" r="16" fill-opacity="0" stroke="white" stroke-width="6" stroke-dasharray="82"/>
+    <polygon points="176,153 168,160 184,160" fill="white" stroke-opacity="0"/>
+
+    <!--  refresh.pressed  -->
+    <circle id="renc" cx="224" cy="160" r="16" fill-opacity="0" stroke="#CCCCCC" stroke-width="6" stroke-dasharray="82"/>
+    <polygon points="240,153 232,160 248,160" fill="#CCCCCC" stroke-opacity="0"/>
+
+    <!--  Check  -->
+    <rect x="4" y="196" width="8" height="8" fill="white" />
+
+    <!--  Check.disabled  -->
+    <rect x="20" y="196" width="8" height="8" fill="#CCCCCC" />
+
+    <!--  Uncheck  -->
+    <rect x="4" y="212" width="8" height="8" fill="#00000000" stroke="white" stroke-width="1"/>
+
+    <!--  Uncheck.disabled  -->
+    <rect x="20" y="212" width="8" height="8" fill="#00000000" stroke="#CCCCCC" stroke-width="1" />
+
+    <!--  Copy  -->
+    <rect x="143" y="197" width="28" height="40"  fill="#000000" stroke="#ffffff" stroke-width="4px"/>
+    <rect x="153" y="207" width="28" height="40"  fill="#000000" stroke="#ffffff" stroke-width="4px"/>
+
+    <!--  Copy.pressed  -->
+    <rect x="207" y="197" width="28" height="40"  fill="#000000" stroke="#cccccc" stroke-width="4px"/>
+    <rect x="217" y="207" width="28" height="40"  fill="#000000" stroke="#cccccc" stroke-width="4px"/>
+
+</svg>

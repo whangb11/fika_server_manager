@@ -1,0 +1,39 @@
+index,cn,en
+LANGUAGE_NAME,简体中文,English
+LANGUAGE_LANGUAGE,语言,Language
+UI_MODLOADER_ADD_TOOLTIP,添加新的优先级组,Add a new priority group.
+UI_MODLOADER_DEL_TOOLTIP,删除该优先级组,Delete the priority group.
+UI_PAUSE_PAUSE,暂停,Paused
+UI_PAUSE_RESUME,恢复,Resume
+UI_PAUSE_OVERWORLD,返回主世界,Return to the main world
+UI_PAUSE_OVERWORLD_HINT,当前关卡进度将会丢失！,Progress in current level will be lost!
+UI_PAUSE_DESKTOP,返回系统桌面,Return to the desktop
+UI_PAUSE_DOSAVE,是否保存?,Save?
+UI_PAUSE_DOSAVE_YES,是,Yes
+UI_PAUSE_DOSAVE_NO,否,No
+UI_PAUSE_DOSAVE_CANCEL,取消,Cancel
+UI_COPY_TOOLTIP,复制,Copy
+UI_WARN_INVALID_SPT_INSTALLATION,无法读取SPT安装目录 {0},Unable to read SPT installation folder {0}
+UI_WARN_INVALID_FIKA_CHECK,提供的路径缺失目标文件 {0},Missing file "{0}" in provided folder
+UI_WARN_INVALID_CURRENT_PRESETID,预设id {0} 无效，应用失败,"Invalid preset id {0}, preset will not be applied"
+UI_INFO_HOST_IP,主机IP,Host IP
+UI_INFO_CLIENT_IP,客机IP,Client IP
+UI_INFO_PRESET_UNNAMED,未命名,Unnamed
+UI_INFO_CURRENT,当前,Current
+UI_INFO_APPLY,应用,Apply
+UI_ADDBOX_TITLE,添加一个新的预设,Add a new Preset
+UI_INFO_PRESET_NAME,名称,Name
+UI_EMPTY_WARN_NAME,名称不应为空,A name is required
+UI_EMPTY_WARN_HOST,主机ip不应为空,A host IP is required
+UI_EMPTY_WARN_CLIENT,客机ip不应为空,A client IP is required
+UI_TAMPER_ERROR_I,"无法读取{0}，请检查访问权限并关闭SPT服务端与客户端","Unable to read {0}, please check the premissions and close SPT.client&SPT.server"
+UI_TAMPER_ERROR_O,"无法写入{0}，请检查访问权限并关闭SPT服务端与客户端","Unable to write {0}, please check the premissions and close SPT.client&SPT.server"
+UI_TAMPER_ERROR_BACKUP_FAILED,"无法备份{0}，请检查访问权限并关闭SPT服务端与客户端","Unable to backup {0}, please check the premissions and close SPT.client&SPT.server"
+UI_DELETE_TITLE,是否删除（无法撤回）,Are you sure?(Deletion is irreversive)
+UI_SUCCESS,成功,Success
+UI_ADVANCED,进阶设置,Advanced
+UI_HTTP_JSON_OVERRIDE,http.json路径,http.json path
+UI_CONFIG_JSON_OVERRIDE,config.json路径,config.json path
+UI_FIKA_CFG_OVERRIDE,fika cfg路径,fika cfg path
+UI_OVERRIDE_NBSP,留空以使用默认配置,Empty for default
+UI_OVERRIDE_TIP,<spt>以指代spt安装目录,Use <spt> as SPT folder

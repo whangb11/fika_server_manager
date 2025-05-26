@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=3 uid="uid://biekdukeq1o41"]
+
+[ext_resource type="Script" uid="uid://kyt8ndfhn8hy" path="res://scene/preset_displayer/preset_displayer.gd" id="1_t182s"]
+[ext_resource type="Theme" uid="uid://cev6esijkovfk" path="res://asset/theme/modloader_frontend/modloader_frontend_theme.tres" id="2_smkl3"]
+[ext_resource type="Texture2D" uid="uid://cu4ptmvv0ughj" path="res://asset/texture/modloader_ui_conpoment/ui_edit.tres" id="3_x4ap0"]
+[ext_resource type="Texture2D" uid="uid://c0snbuql8hffb" path="res://asset/texture/modloader_ui_conpoment/ui_edit_pressed.tres" id="4_vx8at"]
+[ext_resource type="Texture2D" uid="uid://dlwtpcyxd4yb7" path="res://asset/texture/modloader_ui_conpoment/ui_delete_k.tres" id="5_f1ij1"]
+[ext_resource type="Texture2D" uid="uid://b18ar4xpvrg7r" path="res://asset/texture/modloader_ui_conpoment/ui_delete_pressed_k.tres" id="6_flbgn"]
+
+[node name="PresetDisplayer" type="ColorRect"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(0, 180)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_smkl3")
+script = ExtResource("1_t182s")
+
+[node name="PresetName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 64.0
+offset_top = 16.0
+offset_right = -64.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Preset name placeholder"
+clip_text = true
+text_overrun_behavior = 4
+
+[node name="Edit" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 48.0
+texture_normal = ExtResource("3_x4ap0")
+texture_pressed = ExtResource("4_vx8at")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Delete" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -48.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 48.0
+texture_normal = ExtResource("5_f1ij1")
+texture_pressed = ExtResource("6_flbgn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PresetNameEdit" type="LineEdit" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Preset name placeholder"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 64.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DataK" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="HostIP" type="Label" parent="HBoxContainer/DataK"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "UI_INFO_HOST_IP"
+horizontal_alignment = 2
+
+[node name="ClientIP" type="Label" parent="HBoxContainer/DataK"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "UI_INFO_CLIENT_IP"
+horizontal_alignment = 2
+
+[node name="Filler" type="ColorRect" parent="HBoxContainer/DataK"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Apply" type="Button" parent="HBoxContainer/DataK"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "UI_INFO_APPLY"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="DataV" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_smkl3")
+
+[node name="HostIPEdit" type="LineEdit" parent="HBoxContainer/DataV"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "hostip"
+
+[node name="ClientIPEdit" type="LineEdit" parent="HBoxContainer/DataV"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "clientip"
+
+[connection signal="pressed" from="Edit" to="." method="_on_edit_pressed"]
+[connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]
+[connection signal="text_submitted" from="PresetNameEdit" to="." method="_on_preset_name_edit_text_submitted"]
+[connection signal="pressed" from="HBoxContainer/DataK/Apply" to="." method="_on_apply_pressed"]
+[connection signal="text_submitted" from="HBoxContainer/DataV/HostIPEdit" to="." method="_on_host_ip_edit_text_submitted"]
+[connection signal="text_submitted" from="HBoxContainer/DataV/ClientIPEdit" to="." method="_on_client_ip_edit_text_submitted"]

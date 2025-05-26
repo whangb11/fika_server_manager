@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=2 format=3 uid="uid://celofm8oall02"]
+
+[ext_resource type="Script" uid="uid://dikjjb6f17toy" path="res://scene/ext/PlayerDataServerV2/basical_player_data_script.gd" id="1_2v6a8"]
+
+[resource]
+script = ExtResource("1_2v6a8")
+save_name = "unnamed"
+last_date_unix64 = null
+permanent_data = {}
+temporal_data = {}

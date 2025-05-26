@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="fika_server_manager"
+config/version="0.0.1"
+run/main_scene="uid://c4ka8n0nh6xr3"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="uid://bp64nw7sst2h0"
+
+[autoload]
+
+PlayerDataServerV2="*res://scene/ext/PlayerDataServerV2/PlayerDataServerV2.tscn"
+
+[display]
+
+window/size/viewport_width=900
+window/size/viewport_height=600
+window/size/sharp_corners=true
+
+[global_group]
+
+MainScene=""
+
+[gui]
+
+theme/custom_font="uid://bjardw7p1sbcq"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://asset/i18n/locale.cn.translation", "res://asset/i18n/locale.en.translation")

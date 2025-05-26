@@ -1,0 +1,65 @@
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://cev6esijkovfk"]
+
+[ext_resource type="StyleBox" uid="uid://hr1mricu7ewt" path="res://asset/theme/modloader_frontend/panel_bz_disabled.tres" id="1_rnfhk"]
+[ext_resource type="StyleBox" uid="uid://6eft8lapytrh" path="res://asset/theme/modloader_frontend/panel_bz_focus.tres" id="2_ge8vb"]
+[ext_resource type="StyleBox" uid="uid://c3m7ijx77wfrx" path="res://asset/theme/modloader_frontend/panel_bz_hover.tres" id="3_tlxan"]
+[ext_resource type="StyleBox" uid="uid://ie123we8p6qu" path="res://asset/theme/modloader_frontend/panel_bz.tres" id="4_jbgqw"]
+[ext_resource type="StyleBox" uid="uid://ccisjkbl1iy17" path="res://asset/theme/modloader_frontend/panel_bz_pressed.tres" id="5_4p4e6"]
+[ext_resource type="Texture2D" uid="uid://c31lci5a5jxo6" path="res://asset/texture/modloader_ui_conpoment/ui_check_disabled.tres" id="6_0qb23"]
+[ext_resource type="FontFile" uid="uid://co2r55t3l6vh0" path="res://asset/font/NotoSansMono-ExtraBold.ttf" id="6_4p4e6"]
+[ext_resource type="StyleBox" uid="uid://br37v4chgk2jl" path="res://asset/theme/modloader_frontend/grabber_normal.tres" id="6_jbgqw"]
+[ext_resource type="StyleBox" uid="uid://dl584x2vcrcg5" path="res://asset/theme/modloader_frontend/grabber_hover.tres" id="7_4p4e6"]
+[ext_resource type="Texture2D" uid="uid://bpiuusob6578o" path="res://asset/texture/modloader_ui_conpoment/ui_check.tres" id="7_ptxl6"]
+[ext_resource type="Texture2D" uid="uid://cbgticjfsd6su" path="res://asset/texture/modloader_ui_conpoment/ui_uncheck.tres" id="8_1ugjo"]
+[ext_resource type="StyleBox" uid="uid://bjvshay2ylxih" path="res://asset/theme/modloader_frontend/grabber_pressed.tres" id="8_3l31b"]
+[ext_resource type="Texture2D" uid="uid://bm7ascnemyn0p" path="res://asset/texture/modloader_ui_conpoment/ui_uncheck_disabled.tres" id="9_n0cjs"]
+[ext_resource type="FontFile" uid="uid://mcnwyldya0cs" path="res://asset/font/NotoSansMono-Medium.ttf" id="10_a6cmv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0qb23"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vg167"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 0.933333)
+border_color = Color(0.992157, 0.792157, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6cmv"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 0.933333)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8eq0y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brmiu"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[resource]
+Button/styles/disabled = ExtResource("1_rnfhk")
+Button/styles/focus = ExtResource("2_ge8vb")
+Button/styles/hover = ExtResource("3_tlxan")
+Button/styles/normal = ExtResource("4_jbgqw")
+Button/styles/pressed = ExtResource("5_4p4e6")
+CheckBox/icons/checked = ExtResource("6_0qb23")
+CheckBox/icons/checked_disabled = ExtResource("7_ptxl6")
+CheckBox/icons/unchecked = ExtResource("8_1ugjo")
+CheckBox/icons/unchecked_disabled = ExtResource("9_n0cjs")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_0qb23")
+Label/fonts/font = ExtResource("10_a6cmv")
+LineEdit/font_sizes/font_size = 24
+LineEdit/styles/focus = SubResource("StyleBoxFlat_vg167")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_a6cmv")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_8eq0y")
+Panel/styles/panel = SubResource("StyleBoxFlat_brmiu")
+RichTextLabel/font_sizes/bold_font_size = 32
+RichTextLabel/font_sizes/bold_italics_font_size = 32
+RichTextLabel/font_sizes/italics_font_size = 32
+RichTextLabel/font_sizes/mono_font_size = 32
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/bold_font = ExtResource("6_4p4e6")
+ScrollContainer/styles/focus = null
+ScrollContainer/styles/panel = null
+VBoxContainer/constants/separation = 8
+VScrollBar/styles/grabber = ExtResource("6_jbgqw")
+VScrollBar/styles/grabber_highlight = ExtResource("7_4p4e6")
+VScrollBar/styles/grabber_pressed = ExtResource("8_3l31b")

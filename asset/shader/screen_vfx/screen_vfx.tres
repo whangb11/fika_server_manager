@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://clcy6voaiysvt"]
+
+[ext_resource type="Shader" uid="uid://d1y40rf4rrmv4" path="res://asset/shader/screen_vfx/screen_vfx.gdshader" id="1_v5t61"]
+
+[resource]
+shader = ExtResource("1_v5t61")
+shader_parameter/stripe_scale = 10.21
+shader_parameter/time_scale = 32.0

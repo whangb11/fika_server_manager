@@ -1,0 +1,530 @@
+[gd_scene load_steps=11 format=3 uid="uid://c4ka8n0nh6xr3"]
+
+[ext_resource type="Theme" uid="uid://cev6esijkovfk" path="res://asset/theme/modloader_frontend/modloader_frontend_theme.tres" id="1_cxg5s"]
+[ext_resource type="Script" uid="uid://c5kwdgt2ekv3k" path="res://scene/mainsc/mainsc.gd" id="2_iejig"]
+[ext_resource type="PackedScene" uid="uid://biekdukeq1o41" path="res://scene/preset_displayer/preset_displayer.tscn" id="3_kyolk"]
+[ext_resource type="Texture2D" uid="uid://b43ux2xhcuvwy" path="res://asset/texture/modloader_ui_conpoment/ui_copy.tres" id="3_lsncp"]
+[ext_resource type="Texture2D" uid="uid://divk118qbk4tu" path="res://asset/texture/modloader_ui_conpoment/ui_add.tres" id="3_srt3c"]
+[ext_resource type="Texture2D" uid="uid://xcdy3wgnywv3" path="res://asset/texture/modloader_ui_conpoment/ui_copy_pressed.tres" id="4_tj7uj"]
+[ext_resource type="Texture2D" uid="uid://b2kw5w7whtnhx" path="res://asset/texture/modloader_ui_conpoment/ui_add_pressed.tres" id="4_uk71b"]
+[ext_resource type="Texture2D" uid="uid://dbichhxevyxdf" path="res://asset/texture/modloader_ui_conpoment/ui_refresh.tres" id="5_efnw6"]
+[ext_resource type="Material" uid="uid://clcy6voaiysvt" path="res://asset/shader/screen_vfx/screen_vfx.tres" id="5_tj7uj"]
+[ext_resource type="Texture2D" uid="uid://bec4g2w2osgqq" path="res://asset/texture/modloader_ui_conpoment/ui_refresh_pressed.tres" id="6_ljxne"]
+
+[node name="Mainsc" type="Control" groups=["MainScene"]]
+auto_translate_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cxg5s")
+script = ExtResource("2_iejig")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+
+[node name="LineEdit" type="LineEdit" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -56.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+placeholder_text = "SPT path go here"
+
+[node name="Add" type="TextureButton" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = 4.0
+offset_right = -32.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("3_srt3c")
+texture_pressed = ExtResource("4_uk71b")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Refresh" type="TextureButton" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("5_efnw6")
+texture_pressed = ExtResource("6_ljxne")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Div" type="Control" parent="Panel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 48.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CurrentInfoContainer" type="ColorRect" parent="Panel/Div"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = -8.0
+grow_vertical = 2
+
+[node name="HintCurrent" type="Label" parent="Panel/Div/CurrentInfoContainer"]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 16.0
+offset_right = -16.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "UI_INFO_CURRENT"
+
+[node name="Div" type="Control" parent="Panel/Div/CurrentInfoContainer"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="K" type="VBoxContainer" parent="Panel/Div/CurrentInfoContainer/Div"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = 160.0
+offset_bottom = -16.0
+grow_horizontal = 0
+
+[node name="HostIP" type="Label" parent="Panel/Div/CurrentInfoContainer/Div/K"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "UI_INFO_HOST_IP"
+horizontal_alignment = 2
+
+[node name="ClientIP" type="Label" parent="Panel/Div/CurrentInfoContainer/Div/K"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "UI_INFO_CLIENT_IP"
+horizontal_alignment = 2
+
+[node name="TitleAdvanced" type="Label" parent="Panel/Div/CurrentInfoContainer/Div/K"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "UI_ADVANCED"
+horizontal_alignment = 2
+
+[node name="HTTPJson" type="Label" parent="Panel/Div/CurrentInfoContainer/Div/K"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "UI_HTTP_JSON_OVERRIDE"
+horizontal_alignment = 2
+
+[node name="Configjson" type="Label" parent="Panel/Div/CurrentInfoContainer/Div/K"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "UI_CONFIG_JSON_OVERRIDE"
+horizontal_alignment = 2
+
+[node name="FikaCfg" type="Label" parent="Panel/Div/CurrentInfoContainer/Div/K"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "UI_FIKA_CFG_OVERRIDE"
+horizontal_alignment = 2
+
+[node name="Lang" type="Label" parent="Panel/Div/CurrentInfoContainer/Div/K"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "LANGUAGE_LANGUAGE"
+horizontal_alignment = 2
+
+[node name="Filler" type="ColorRect" parent="Panel/Div/CurrentInfoContainer/Div/K"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Apply" type="Button" parent="Panel/Div/CurrentInfoContainer/Div/K"]
+layout_mode = 2
+text = "UI_INFO_APPLY"
+
+[node name="V" type="VBoxContainer" parent="Panel/Div/CurrentInfoContainer/Div"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 176.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HostIP" type="Label" parent="Panel/Div/CurrentInfoContainer/Div/V"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "none"
+
+[node name="ClientIP" type="Label" parent="Panel/Div/CurrentInfoContainer/Div/V"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "none"
+
+[node name="LineFiller" type="Label" parent="Panel/Div/CurrentInfoContainer/Div/V"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "UI_OVERRIDE_TIP"
+
+[node name="HTTPEdit" type="LineEdit" parent="Panel/Div/CurrentInfoContainer/Div/V"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+placeholder_text = "UI_OVERRIDE_NBSP"
+
+[node name="ConfigEdit" type="LineEdit" parent="Panel/Div/CurrentInfoContainer/Div/V"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+placeholder_text = "UI_OVERRIDE_NBSP"
+
+[node name="FikaCfgEdit" type="LineEdit" parent="Panel/Div/CurrentInfoContainer/Div/V"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+placeholder_text = "UI_OVERRIDE_NBSP"
+
+[node name="LangEdit" type="LineEdit" parent="Panel/Div/CurrentInfoContainer/Div/V"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+placeholder_text = "e.g. cn/en"
+
+[node name="Filler" type="ColorRect" parent="Panel/Div/CurrentInfoContainer/Div/V"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PresetsContainer" type="Panel" parent="Panel/Div"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = -16.0
+
+[node name="CurrentTracker" type="ColorRect" parent="Panel/Div/PresetsContainer"]
+visible = false
+layout_mode = 0
+offset_left = -17.0
+offset_top = 23.0
+offset_right = 13.0
+offset_bottom = 55.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Div/PresetsContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -4.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Div/PresetsContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PresetDisplayer" parent="Panel/Div/PresetsContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_kyolk")]
+layout_mode = 2
+
+[node name="AddboxContainer" type="ColorRect" parent="."]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Addbox" type="Panel" parent="AddboxContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="AddboxContainer/Addbox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+grow_horizontal = 2
+text = "UI_ADDBOX_TITLE"
+
+[node name="Div" type="Control" parent="AddboxContainer/Addbox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 36.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AddK" type="VBoxContainer" parent="AddboxContainer/Addbox/Div"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_right = 96.0
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="AddboxContainer/Addbox/Div/AddK"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "UI_INFO_PRESET_NAME"
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="HostIP" type="Label" parent="AddboxContainer/Addbox/Div/AddK"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "UI_INFO_HOST_IP"
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="ClientIP" type="Label" parent="AddboxContainer/Addbox/Div/AddK"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "UI_INFO_CLIENT_IP"
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Fill" type="ColorRect" parent="AddboxContainer/Addbox/Div/AddK"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="ApplyAdd" type="Button" parent="AddboxContainer/Addbox/Div/AddK"]
+layout_mode = 2
+text = "UI_INFO_APPLY"
+text_overrun_behavior = 3
+
+[node name="AddV" type="VBoxContainer" parent="AddboxContainer/Addbox/Div"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+grow_vertical = 2
+
+[node name="Name" type="LineEdit" parent="AddboxContainer/Addbox/Div/AddV"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+
+[node name="HostIP" type="LineEdit" parent="AddboxContainer/Addbox/Div/AddV"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+
+[node name="ClientIP" type="LineEdit" parent="AddboxContainer/Addbox/Div/AddV"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+
+[node name="IfEraseContainer" type="ColorRect" parent="."]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="IfErase" type="Panel" parent="IfEraseContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="IfEraseContainer/IfErase"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+grow_horizontal = 2
+text = "UI_DELETE_TITLE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="IfEraseContainer/IfErase"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Yes" type="Button" parent="IfEraseContainer/IfErase/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UI_PAUSE_DOSAVE_YES"
+
+[node name="No" type="Button" parent="IfEraseContainer/IfErase/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UI_PAUSE_DOSAVE_NO"
+
+[node name="InfoboxContainer" type="ColorRect" parent="."]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Infobox" type="Panel" parent="InfoboxContainer"]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Info" type="Label" parent="InfoboxContainer/Infobox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Nothing there."
+autowrap_mode = 3
+
+[node name="Copy" type="TextureButton" parent="InfoboxContainer/Infobox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 32.0
+grow_horizontal = 0
+tooltip_text = "UI_COPY_TOOLTIP"
+tooltip_auto_translate_mode = 1
+texture_normal = ExtResource("3_lsncp")
+texture_pressed = ExtResource("4_tj7uj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SH_TTY_VFX_ENABLE_AT_UR_OWN_RISK" type="ColorRect" parent="."]
+visible = false
+material = ExtResource("5_tj7uj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="editing_toggled" from="Panel/Panel/LineEdit" to="." method="_on_line_edit_editing_toggled"]
+[connection signal="pressed" from="Panel/Panel/Add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="Panel/Panel/Refresh" to="." method="_on_refresh_pressed"]
+[connection signal="pressed" from="Panel/Div/CurrentInfoContainer/Div/K/Apply" to="." method="_on_apply_pressed"]
+[connection signal="text_submitted" from="Panel/Div/CurrentInfoContainer/Div/V/HTTPEdit" to="." method="_on_http_edit_text_submitted"]
+[connection signal="text_submitted" from="Panel/Div/CurrentInfoContainer/Div/V/ConfigEdit" to="." method="_on_config_edit_text_submitted"]
+[connection signal="text_submitted" from="Panel/Div/CurrentInfoContainer/Div/V/FikaCfgEdit" to="." method="_on_fika_cfg_edit_text_submitted"]
+[connection signal="text_submitted" from="Panel/Div/CurrentInfoContainer/Div/V/LangEdit" to="." method="_on_lang_edit_text_submitted"]
+[connection signal="gui_input" from="AddboxContainer" to="." method="_on_addbox_container_gui_input"]
+[connection signal="pressed" from="AddboxContainer/Addbox/Div/AddK/ApplyAdd" to="." method="_on_apply_add_pressed"]
+[connection signal="gui_input" from="IfEraseContainer" to="." method="_on_if_erase_container_gui_input"]
+[connection signal="pressed" from="IfEraseContainer/IfErase/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="IfEraseContainer/IfErase/HBoxContainer/No" to="." method="_on_no_pressed"]
+[connection signal="gui_input" from="InfoboxContainer" to="." method="_on_infobox_container_gui_input"]
+[connection signal="pressed" from="InfoboxContainer/Infobox/Copy" to="." method="_on_copy_pressed"]
