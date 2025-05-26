@@ -230,7 +230,7 @@ func apply_preset() -> void:
 		show_infobox(TranslationServer.translate("UI_TAMPER_ERROR_I").format([parse_path_overrode(config_json_path)]))
 		return
 	
-	var launcher_json_parse_result = json.parse(launcher_json_ifs.get_as_text())
+	var launcher_json_parse_result = json.parse(launcher_json_ifs.get_as_text(),true)
 	if launcher_json_parse_result != OK:
 		show_infobox(json.get_error_message())
 	launcher_json_ifs.close()
@@ -245,8 +245,8 @@ func apply_preset() -> void:
 	
 	var launcher_json:Dictionary = json.data
 	launcher_json["IsDevMode"] = true
-	launcher_json["Name"] = preset_data["name"]
-	launcher_json["Url"] = "https://{}:6969".format([preset_data["hostip"]])
+	launcher_json["Server"]["Name"] = preset_data["name"]
+	launcher_json["Server"]["Url"] = "https://{0}:6969".format([preset_data["hostip"]])
 	var launcher_json_ofs:FileAccess = FileAccess.open(parse_path_overrode(config_json_path),FileAccess.WRITE)
 	if launcher_json_ofs == null:
 		show_infobox(TranslationServer.translate("UI_TAMPER_ERROR_O").format([parse_path_overrode(config_json_path)]))
