@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="fika_server_manager"
-config/version="1.0.0"
+config/version="1.0.1"
 run/main_scene="uid://c4ka8n0nh6xr3"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://bp64nw7sst2h0"
