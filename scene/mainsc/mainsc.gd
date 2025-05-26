@@ -14,9 +14,15 @@ var refuserdata:PlayerData
 
 const TRANSITION_DURATION_SEC:float = 0.2
 const PRESET_DISPLAYER_SC:PackedScene = preload("res://scene/preset_displayer/preset_displayer.tscn")
-var http_json_path:String = "<spt>SPT_Data/Server/configs/http.json"
-var config_json_path:String = "<spt>user/launcher/config.json"
-var fika_cfg_path:String = "<spt>BepInEx/config/com.fika.core.cfg"
+
+const default_http_json_path:String = "<spt>SPT_Data/Server/configs/http.json"
+const default_config_json_path:String = "<spt>user/launcher/config.json"
+const default_fika_cfg_path:String = "<spt>BepInEx/config/com.fika.core.cfg"
+
+var http_json_path:String = default_http_json_path
+var config_json_path:String = default_config_json_path
+var fika_cfg_path:String = default_fika_cfg_path
+
 var SPT_APPD_EXISTANCE_VALIDATION_LIST:Array = [
 	http_json_path,
 	config_json_path,
@@ -57,16 +63,17 @@ func _update_context() -> void:
 	while preset_container.get_child_count() > 0:
 		preset_container.remove_child(preset_container.get_children()[0])
 	
-	#while current_container.get_child_count() > 0:
-	#	current_container.remove_child(current_container.get_children()[0])
-	
 	var presets:Array = refuserdata.permanent_data.get("presets",[])
 	for i in range(presets.size()):
 		var pd_instance:PresetDisplayer = PRESET_DISPLAYER_SC.instantiate()
 		pd_instance.data_ref = refuserdata
 		pd_instance.preset_id = i
 		preset_container.add_child(pd_instance)
-		
+	
+	$Panel/Div/CurrentInfoContainer/Div/V/HTTPEdit.text = refuserdata.permanent_data.get("http_json_path_override",http_json_path)
+	$Panel/Div/CurrentInfoContainer/Div/V/ConfigEdit.text = refuserdata.permanent_data.get("config_json_path_override",config_json_path)
+	$Panel/Div/CurrentInfoContainer/Div/V/FikaCfgEdit.text = refuserdata.permanent_data.get("fika_cfg_path_override",fika_cfg_path)
+	
 	var current_preset:int = refuserdata.permanent_data.get("current_preset",-1)
 	if  current_preset >= 0 and current_preset < presets.size():
 		var hostip_display:Label = $Panel/Div/CurrentInfoContainer/Div/V/HostIP
@@ -362,16 +369,22 @@ func _on_no_pressed() -> void:
 
 
 func _on_http_edit_text_submitted(new_text: String) -> void:
+	if new_text.length() == 0:
+		new_text = default_http_json_path
 	http_json_path = new_text
 	refuserdata["http_json_path_override"] = http_json_path
 
 
 func _on_config_edit_text_submitted(new_text: String) -> void:
+	if new_text.length() == 0:
+		new_text = default_config_json_path
 	config_json_path = new_text
 	refuserdata["config_json_path_override"] = config_json_path
 
 
 func _on_fika_cfg_edit_text_submitted(new_text: String) -> void:
+	if new_text.length() == 0:
+		new_text = default_fika_cfg_path
 	fika_cfg_path = new_text
 	refuserdata["fika_cfg_path_override"] = fika_cfg_path
 
